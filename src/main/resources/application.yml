@@ -1,0 +1,47 @@
+server:
+  port: 8080
+
+spring:
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true
+      port: 35729
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  mail:
+    host: smtp.naver.com
+    port: 465
+    username: # 입력
+    password: # 입력
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.ssl.enable: true
+      mail.smtp.ssl.trust: smtp.naver.com
+      mail.smtp.starttls.enable: true
+
+cloud:
+  aws:
+    credentials:
+      access-key: # 입력
+      secret-key: # 입력
+    region:
+      static: # 입력
+    s3:
+      bucket:
+        url: # 입력
+        name: # 입력
+    stack:
+      auto: false
+
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: ERROR
